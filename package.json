@@ -1,0 +1,39 @@
+{
+  "name": "react_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "ava",
+    "start": "watchify src/main.jsx -v --debug -t babelify -o public/js/main.js",
+    "server": "http-server public",
+    "build": "browserify src/main.js -v -t babelify -o public/js/main.js",
+    "compile": "babel src -d ./babel"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-preset-react": "6.1.18",
+    "babelify": "^7.3.0",
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-react": "^6.4.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "jsx-test-helpers": "^1.1.0",
+    "react": "*",
+    "react-dom": "^15.3.2",
+    "watchify": "3.7.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}
